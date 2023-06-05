@@ -1,3 +1,7 @@
+:root{
+  --main-border-radius: 6px;
+
+}
 .fruits-container {
     padding: 13px;
   display: flex;
@@ -10,5 +14,17 @@
 .fruits-img {
   width: 150px;
   height: 150px;
-  border: solid firebrick 1px;
+  border-radius: var(--main-border-radius);
+  
+}
+.img-name-container:hover{
+  filter: brightness(95%);
+}
+.img-name-container{
+  /* border: solid 1px firebrick; */
+  border: solid gray 1px;
+  display:flex;
+  border-radius: var(--main-border-radius);
+
+  flex-direction: row;
 }

@@ -1,10 +1,11 @@
 import './App.css';
 import Fruits from './components/Fruits';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <div className="App">
-      <h1>Memory Card</h1>
+      <Navbar />
       <Fruits />
     </div>
   );

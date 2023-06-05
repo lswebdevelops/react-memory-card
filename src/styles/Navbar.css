@@ -1,0 +1,19 @@
+:root{
+    --main-border-radius: 6px;
+  
+  }
+.score-container{
+    display: flex;
+    gap: 25px;
+    width: 25%;
+    min-width: 250px;
+    border:solid gray 1px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 0;
+    border-radius: var(--main-border-radius);
+}
+.span-score, .span-higher-score{
+    font-weight: 700;
+}
