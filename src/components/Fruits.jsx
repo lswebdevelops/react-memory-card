@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "../styles/Fruits.css";
 
-const Fruits = () => {
+const Fruits = ({ setScore }) => {
   const [fruitImages, setFruitImages] = useState([
     "apple.png",
     "banana.png",
@@ -17,38 +17,65 @@ const Fruits = () => {
     "melon.png",
   ]);
 
-  const changeImages = () => {
+  const previousImageRef = useRef(null);
+
+  const scoreUp = () => {
+    setScore((prevScore) => {
+      const newScore = prevScore + 1;
+      if (newScore === 12) {
+        alert("Great Job")
+        resetScore(); // Restart the score if it reaches 12
+      }
+      return newScore;
+    });
+  };
+  const resetScore = () => {
+    setScore(0);
+  };
+
+  const changeImages = (image) => {
     const shuffledImages = [...fruitImages];
     for (let i = shuffledImages.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [shuffledImages[i], shuffledImages[j]] = [shuffledImages[j], shuffledImages[i]];
+      [shuffledImages[i], shuffledImages[j]] = [
+        shuffledImages[j],
+        shuffledImages[i],
+      ];
     }
     setFruitImages(shuffledImages);
+
+    if (previousImageRef.current === image) {
+      resetScore(); // Reset score if the same fruit is clicked
+    } else {
+      scoreUp(); // Increase score if a different fruit is clicked
+    }
+
+    previousImageRef.current = image;
   };
+
   const getFruitName = (imageName) => {
     const nameWithoutExtension = imageName.split(".")[0];
-    const capitalized = nameWithoutExtension.charAt(0).toUpperCase() + nameWithoutExtension.slice(1);
+    const capitalized =
+      nameWithoutExtension.charAt(0).toUpperCase() +
+      nameWithoutExtension.slice(1);
     return capitalized;
   };
- 
 
   return (
     <div className="fruits-container">
       {fruitImages.map((image, index) => (
-       <div className="img-name-container" key={index}>
-         <div className="fruits">
-              
-          <img
-            className="fruits-img"
-            src={require(`../images/${image}`)}
-            alt={image.split(".")[0]}
-            onClick={changeImages}
-          ></img>
-          <p >{`${getFruitName(image)}`}</p>
-        </div>
+        <div className="img-name-container" key={index}>
+          <div className="fruits">
+            <img
+              className="fruits-img"
+              src={require(`../images/${image}`)}
+              alt={image.split(".")[0]}
+              onClick={() => changeImages(image)}
+            ></img>
+            <p>{`${getFruitName(image)}`}</p>
+          </div>
         </div>
       ))}
-      
     </div>
   );
 };
