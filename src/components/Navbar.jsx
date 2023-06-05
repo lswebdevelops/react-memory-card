@@ -7,10 +7,10 @@ const Navbar = ({ score, higherScore }) => {
       <h1>Memory Card</h1>
       <div className="score-container">
         <p>
-          Score: <span className="span-score">{score}</span>{" "}
+          Score: <span className="span-score">{score}</span>
         </p>
         <p>
-          Higher Score: <span className="span-higher-score">{higherScore}</span>{" "}
+          Higher Score: <span className="span-higher-score">{higherScore}</span>
         </p>
       </div>
     </div>

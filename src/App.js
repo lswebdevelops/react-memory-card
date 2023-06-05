@@ -8,19 +8,16 @@ function App() {
   const [score, setScore] = useState(0);
   const [higherScore, setHigherScore] = useState(0);
 
-  const updateHigherScore = () => {
-    setHigherScore((prevHigherScore) => {
-      if (score > prevHigherScore) {
-        return score;
-      }
-      return prevHigherScore;
-    });
+  const updateHigherScore = (newScore) => {
+    if (newScore > higherScore) {
+      setHigherScore(newScore);
+    }
   };
 
   return (
     <div className="App">
       <Navbar score={score} higherScore={higherScore} />
-      <Fruits setScore={setScore} setHigherScore={updateHigherScore} />
+      <Fruits setScore={setScore} updateHigherScore={updateHigherScore} />
       <Footer />
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import "../styles/Fruits.css";
 
-const Fruits = ({ setScore }) => {
+const Fruits = ({ setScore, updateHigherScore, score }) => {
   const [fruitImages, setFruitImages] = useState([
     "apple.png",
     "banana.png",
@@ -19,19 +19,24 @@ const Fruits = ({ setScore }) => {
 
   const previousImageRef = useRef(null);
 
+
+
+  const resetScore = () => {
+    setScore(0);
+  };
+
   const scoreUp = () => {
     setScore((prevScore) => {
       const newScore = prevScore + 1;
       if (newScore === 12) {
-        alert("Great Job")
+        alert("Great Job");
         resetScore(); // Restart the score if it reaches 12
       }
+      updateHigherScore(newScore); // Update higherScore with the new score
       return newScore;
     });
   };
-  const resetScore = () => {
-    setScore(0);
-  };
+  
 
   const changeImages = (image) => {
     const shuffledImages = [...fruitImages];
@@ -46,6 +51,7 @@ const Fruits = ({ setScore }) => {
 
     if (previousImageRef.current === image) {
       resetScore(); // Reset score if the same fruit is clicked
+      updateHigherScore(score); // Update higherScore with the previous score
     } else {
       scoreUp(); // Increase score if a different fruit is clicked
     }
