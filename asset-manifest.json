@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react-memory-card/static/css/main.6769293c.css",
+    "main.css": "/react-memory-card/static/css/main.1b4beb07.css",
     "main.js": "/react-memory-card/static/js/main.b85ae57f.js",
     "static/media/apple.png": "/react-memory-card/static/media/apple.8b2b49c8cbafc03ff1f4.png",
     "static/media/orange.png": "/react-memory-card/static/media/orange.d093c5d005d1ea9ae025.png",
@@ -15,11 +15,11 @@
     "static/media/pear.png": "/react-memory-card/static/media/pear.4a9e90dc01db0c2931e0.png",
     "static/media/papaya.png": "/react-memory-card/static/media/papaya.fd0439325af8cd63f64c.png",
     "index.html": "/react-memory-card/index.html",
-    "main.6769293c.css.map": "/react-memory-card/static/css/main.6769293c.css.map",
+    "main.1b4beb07.css.map": "/react-memory-card/static/css/main.1b4beb07.css.map",
     "main.b85ae57f.js.map": "/react-memory-card/static/js/main.b85ae57f.js.map"
   },
   "entrypoints": [
-    "static/css/main.6769293c.css",
+    "static/css/main.1b4beb07.css",
     "static/js/main.b85ae57f.js"
   ]
 }
