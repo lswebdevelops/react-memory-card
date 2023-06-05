@@ -1,9 +1,11 @@
 import './App.css';
+import Fruits from './components/Fruits';
 
 function App() {
   return (
     <div className="App">
-<h1>Testing files</h1>
+      <h1>Memory Card</h1>
+      <Fruits />
     </div>
   );
 }

@@ -1,0 +1,14 @@
+.fruits-container {
+    padding: 13px;
+  display: flex;
+  flex-wrap: wrap;
+  /* border: solid firebrick 1px; */
+  justify-content: center;
+  gap: 13px;
+
+}
+.fruits-img {
+  width: 150px;
+  height: 150px;
+  border: solid firebrick 1px;
+}
