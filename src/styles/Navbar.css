@@ -17,3 +17,19 @@
 .span-score, .span-higher-score{
     font-weight: 700;
 }
+
+@media (max-width: 667px) {
+    .score-container{
+        display: flex;
+        gap: 15px;
+        width: 25%;
+        min-width: 200px;
+        height: 35px;
+       
+    }
+    h1{
+        font-size: 1.8rem;
+      }
+    
+  }
+    
