@@ -1,7 +1,8 @@
 import React, { useState, useRef } from "react";
 import "../styles/Fruits.css";
+import Popup from "./Popup";
 
-const Fruits = ({ setScore, updateHigherScore, score }) => {
+const Fruits = ({ setScore, updateHigherScore, score, togglePopup  }) => {
   const [fruitImages, setFruitImages] = useState([
     "apple.png",
     "banana.png",
@@ -19,7 +20,9 @@ const Fruits = ({ setScore, updateHigherScore, score }) => {
 
   const previousImageRef = useRef(null);
 
-
+  
+    
+ 
 
   const resetScore = () => {
     setScore(0);
@@ -29,7 +32,7 @@ const Fruits = ({ setScore, updateHigherScore, score }) => {
     setScore((prevScore) => {
       const newScore = prevScore + 1;
       if (newScore === 12) {
-        alert("Great Job");
+        togglePopup(); // Open the popup
         resetScore(); // Restart the score if it reaches 12
       }
       updateHigherScore(newScore); // Update higherScore with the new score
